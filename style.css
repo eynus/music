@@ -1,0 +1,351 @@
+body{
+    background-color: rgb(210, 213, 214);
+    user-select: none;
+    margin: 0;
+    padding: 0;
+   
+}
+a{
+    text-decoration: none;
+}
+.wrapper{
+    width:440px;
+    height: 500px;
+    border:1px solid rgba(0,0,0,0.3);
+    margin:100px auto;
+    border-radius: 15px;
+    box-shadow: 0px 6px 7px #999;
+    background:#ddd;
+    overflow: hidden;
+}
+.background{
+    width:440px;
+    height: 230px;
+    background:rgba(0,0,0,0.3);
+    background: url(./source/1.jpg) no-repeat  30% 0;
+    background-size: 678px;
+    overflow: hidden;
+}
+@keyframes style5{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+#loading{
+    position: absolute;
+    /* left: 20px;
+    top: 20px; */
+}
+svg{
+    width:40px;
+    height:40px;
+    margin:10px 20px;
+}
+#style6 path{
+    fill:transparent;
+    stroke: rgba(255,255,255,0.3);
+    stroke-width: 3px;/*描边宽度*/
+    animation: style5 0.6s linear infinite;
+    transform-origin: 20px 20px;
+}
+#style6 circle{
+    fill:transparent;
+    stroke: rgba(255, 255,255,0.3);
+    stroke-width: 3px;
+    stroke-opacity: 0.3;
+}
+.content{
+    width: 100%;
+    height: 150px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+
+}
+.song{
+    margin-top: 0;
+}
+.fa-star:hover{
+    color:#53a3f3;
+}
+.fa-heart:hover{
+    color:rgb(253, 91, 91);
+}
+.progress {
+    padding:0 20px;
+    position: relative;
+    height: 30px;
+}
+.progress div{
+    display: inline-block;
+    font-size: 12px;
+    color:#666;
+}
+.progress .current-time{
+    height:30px;
+    line-height: 30px;
+    position: absolute;
+    left: 25px;
+    /* top: 20px; */
+}
+.progress .total-time{
+    position: absolute;
+    right: 25px;
+    height:30px;
+    line-height: 30px;
+}
+.basebar{
+    border: none;
+    width: 310px;
+    height: 4px;
+    vertical-align: 0px;
+    margin-left:45px;
+    border-radius: 2px;
+    background-color: #414141;
+    position: relative;
+}
+.active{
+    position: absolute;
+    top:0;
+    left: 0;
+    width:0;
+}
+.progressbar{
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+	border:none;
+	width: 100%;
+	height: 4px;
+	border-bottom-left-radius: 2px;
+	border-top-left-radius: 2px;
+	background-color: #53a3f3;
+}
+.radio{
+    display: block;
+    position: absolute;
+    right: -4px;
+    top: -2px;
+    background:#53a3f3;
+    border:2px solid #46a2fd;
+    box-sizing: border-box;
+    width:8px;
+    height: 8px;
+    border-radius:50%;
+    cursor: pointer;
+}
+.content{
+    position: relative;
+    padding: 20px;
+}
+ 
+.content .starNotice{
+    display: none;
+    position: absolute;
+    left:-240px;
+    top: 0;
+    width: 150px;
+    height: 50px;
+    background:rgba(0,0,0,0.4);
+    font-size: 14px;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    animation: starNoticeStyle 3s linear forwards;
+}
+@keyframes starNoticeStyle{
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    60%{
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.control{
+    position: absolute;
+    width: 440px;
+    height: 100px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.play-control a{
+    display: inline-block;
+    background: #414141;
+    color: #ddd;
+    text-align: center;
+    line-height: 46px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    font-size: 18px;
+}
+.play-control a:nth-of-type(1){
+    margin:0 10px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 26px;
+}
+.play-control a .fa-play {
+    margin-left: 6px;
+}
+.play-control a:nth-of-type(2) i{
+    margin-left: -4px;
+}
+.play-control a:nth-of-type(3) i{
+    margin-left: 4px;
+}
+.music-control{
+    position: absolute;
+    top: 55px;
+    right: 25px;
+    /* width: 100px; */
+}
+.current-words{
+    display: none;
+    position: absolute;
+    text-align: center;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    font-size: 14px;
+    color: rgba(0,0,0,0.4);
+    background:linear-gradient(to right,transparent,rgba(0,0,0,0.1),transparent);
+
+}
+ .lyric a{
+    display: inline-block;
+    width:20px;
+    height: 20px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 20px;
+    color: rgba(0,0,0,0.4);
+    opacity: 0.5;
+}
+
+.music-control .fa-random.randomActive{
+    color: #53a3f3;
+}
+
+.music-control .randomNotice{
+    /* display: none; */
+    opacity: 0;
+    position: absolute;
+    top: -220px;
+    left: -180px;
+    border-radius: 5px;
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: rgba(0,0,0,0.4);
+    color: #fff;
+    font-size: 16px;
+    transition: opacity 1s linear;
+    /* animation: starNoticeStyle 1s linear backwards; */
+}
+@keyframes starNoticeStyle{
+    0%{
+        opacity: 0;
+    }
+    30%{
+        opacity:1;
+    }
+    100%{
+        opacity:0;
+    }
+}
+.music-control > div{
+    display: inline-block;
+    background: #ddd;
+    color: rgba(0,0,0,0.5);
+    text-align: center;
+    line-height: 20px;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+.music-control .volume{
+    display: none;
+    position: absolute;
+    top:-74px;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 2px;
+    width:20px;
+    height: 60px;
+    transform: scale(1.5);
+}
+
+.music-control .volume .volume-all-bar{
+    margin:6px auto;
+    width:2px;
+    height: 48px;
+    background-color: #ccc;
+    border-radius: 1px;
+}
+.music-control .volume .volume-curr{
+    position: absolute;
+    right: 9px;
+    bottom: 6px;
+
+    height: 48px;
+}
+.music-control .volume .volume-curr-bar{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width:2px;
+    height: 100%;
+    background-color: #53a3f3;
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+}
+
+.music-control .volume .volume-radio{
+    position: absolute;
+    top: 0;
+    right: -2px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 1px 1px 2px rgba(255,255,255,0.2);
+    cursor: pointer;
+}
+.music-control  .volumeNotice{
+    display: none;
+    position: absolute;
+    top: -150px;
+    left: -150px;
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+    background-color: rgba(0,0,0,0.4);
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    line-height: 50px;
+}
+.music-control a:hover {
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+}
+.music-control .volume-about:hover .volume{
+    display: block;
+   
+}

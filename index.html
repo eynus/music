@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="source/record.png" type="image/x-icon">
+    <title>A Cool Guy Named Eynus!</title>
+</head>
+
+<body>
+    <!-- 
+        需求1：音量大小可控制（可拖拽）
+        需求2：点击上一首、下一首按钮可实现播放上一首，下一首功能
+        需求3：当前音乐播放到最后可自动播放下一首
+
+     -->
+    <div class="wrapper">
+        <div class="background"></div>
+        <div class="content">
+            <!--src="source/horse.mp3"-->
+            <audio  autoplay="autoplay" ></audio>
+            <div class="song-info">
+                <h3 class="song">阳光彩虹小白马</h3>
+                <p class="singer">大张伟</p>
+            </div>
+            <div class="current-words">歌词</div>
+        </div>
+
+        <div class="progress">
+            <div class="current-time">00:00</div>
+            <div class="basebar">
+                <div class="active">
+                    <span class="progressbar"></span>
+                    <span class="radio"></span>
+                </div>
+            </div>
+
+            <div class="total-time">00:00</div>
+        </div>
+
+        <div class="control">
+            <div class="play-control">
+                <div id="loading" class="loading">
+                    <div class="item item6">
+                        <svg id="style6" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="15"></circle>
+                            <path d="M 5 20 A 15 15 0 0 1 20 5"></path>
+                        </svg>
+                    </div>
+                </div>
+                <a class="play-btn" href="javascript:;"><i class="fa fa-play"></i></a>
+                <a class="last-btn" href="javascript:;"><i class="fa fa-backward"></i></a>
+                <a class="next-btn" href="javascript:;"><i class="fa fa-forward"></i></a>
+            </div>
+            <div class="music-control">
+
+
+                <div><i class="fa fa-random" title="随机模式"></i>
+                    <div class="randomNotice"></div>
+                </div>
+                <div class="volume-about" title="音量">
+                    <i class="fa fa-volume-up volume-icon"></i>
+                    <div class="volumeNotice"></div>
+
+                    <div class="volume">
+                        <div class="volume-all-bar"></div>
+                        <div class="volume-curr">
+                            <div class="volume-curr-bar"></div>
+                            <div class="volume-radio"></div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- <pre id="songText"></pre> -->
+
+                <div class="lyric">
+                    <a href="javascript:;" title="歌词" id="showLyric">词</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/lyric.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
